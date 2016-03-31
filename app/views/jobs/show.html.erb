@@ -5,7 +5,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-2">
-               <img src="http://placehold.it/100x100" class="img-rounded">
+               <%= image_tag @job.company_logo.thumb.url, class: "img-rounded" %>
             </div><!-- col-md-2 -->
             <div class="col-md-8">
               <h3><%= @job.title %></h3>
@@ -13,11 +13,13 @@
               <p><small><%= @job.website %></small> | <small><%= @job.email %></small></p>
             </div><!-- col-md-8 -->
             <div class="col-md-2">
-              <small style="color: #96a2b2;"><%= time_ago_in_words(@job.created_at) %> ago</small>
-              
-                <%= link_to 'Edit', edit_job_path(@job) %>
-                <%= link_to 'Back', jobs_path %>
-              
+              <small style="color: #96a2b2;"><%= time_ago_in_words(@job.created_at) %> ago</small><br>
+              <% if (user_signed_in? && (current_user.id == @job.user_id)) %>
+                  <% if can? :update, @job %>
+                    <%= link_to 'Edit', edit_job_path(@job), class: "btn btn-warning btn-xs" %>
+                  <% end %>
+                  <%= link_to 'My Listings', jobs_path, class: "btn btn-info btn-xs" %>
+              <% end %>
             </div><!-- col-md-2 -->
           </div><!-- row -->
           <div class="row">

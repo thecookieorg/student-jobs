@@ -1,6 +1,8 @@
 <%= simple_form_for(@job) do |f| %>
 
   <div class="form-inputs">
+    <small><em>Add Company Logo</em></small>
+    <%= f.file_field :company_logo %><br>
     <%= f.input :title, placeholder: "Job Title, e.g. Front-end developer", label: false, autofocus: true %>
     <%= f.input :description, placeholder: "Short job description...", label: false %>
     <%= f.input :long_description, placeholder: "Long job description...", label: false %>

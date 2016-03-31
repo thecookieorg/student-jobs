@@ -11,8 +11,8 @@
     </div><!-- jumbotron -->
     
     <div class="row">
-        <div class="col-md-12">
-            <h3 style="color: #333;">We found <%= @jobs.size %> jobs in our database</h3>
+        <div class="col-md-12 text-center">
+            <h3 style="color: #333;">Find your dream job!</h3>
         </div>
     </div><!-- row -->
     
@@ -32,7 +32,7 @@
                     <img src="http://placehold.it/100x100" class="img-rounded">
                 </div>
                 <div class="col-sm-3">
-                    <h3><%= job.title %></h3>
+                    <h3><%= link_to job.title, job %></h3>
                     <h5 style="color: #96a2b2;"><%= job.company_name %></h5>
                 </div>
                 <div class="col-md-3 col-md-offset-4">

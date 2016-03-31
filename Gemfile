@@ -8,6 +8,8 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem "twitter-bootstrap-rails"
 gem 'sass-rails', '~> 5.0'
+gem 'carrierwave'
+gem 'mini_magick', '~> 4.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -27,6 +29,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'devise'
 gem 'will_paginate', '~> 3.0.6'
+gem 'cancancan', '~> 1.10'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
