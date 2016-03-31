@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   end
   
   def all_jobs
-    @jobs = Job.all.order("created_at desc")
+    @jobs = Job.all.order("created_at desc").paginate(page: params[:page], per_page: 30)
   end
     
 end
