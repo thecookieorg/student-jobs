@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="jumbotron text-center">
+      <h1>Browse jobs</h1>
+      <p>Use following search box to find jobs that fits you better</p>
+      <div style="width:60%; margin: 0px auto; margin-top: 70px;"><form role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Keyword: job title, company, city">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form></div>
+    </div><!-- jumbotron -->
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="color: #333;">We found <%= @jobs.size %> jobs in our database</h3>
+        </div>
+    </div><!-- row -->
+    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <hr>
+        </div>
+    </div><!-- row -->
+    
+    <div class="row">
+        <% @jobs.each do |job| %>
+    <div class="col-md-12">
+        <div class="panel panel-default hover-job">
+          <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-2">
+                    <img src="http://placehold.it/100x100" class="img-rounded">
+                </div>
+                <div class="col-sm-3">
+                    <h3><%= job.title %></h3>
+                    <h5 style="color: #96a2b2;"><%= job.company_name %></h5>
+                </div>
+                <div class="col-md-3 col-md-offset-4">
+                    <h4><%= job.address %></h4>
+                    <% if job.category == 'Full Time' %>
+                        <small class="label label-success">Full-Time</small>
+                    <% elsif job.category == 'Part Time' %>
+                        <small class="label label-warning">Part-Time</small>
+                    <% elsif job.category == 'Contract' %>
+                        <small class="label label-info">Contract</small>
+                    <% elsif job.category == 'Freelance' %>
+                        <small class="label label-warning">Freelance</small>
+                    <% elsif job.category == 'Internship' %>
+                        <small class="label label-danger">Internship</small>
+                    <% end %>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        
+    </div>
+    <% end %>
+    </div><!-- row -->
+    
+</div>

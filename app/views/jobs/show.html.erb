@@ -1,59 +1,68 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-2">
+               <img src="http://placehold.it/100x100" class="img-rounded">
+            </div><!-- col-md-2 -->
+            <div class="col-md-8">
+              <h3><%= @job.title %></h3>
+              <h5><%= @job.company_name %></h5>
+              <p><small><%= @job.website %></small> | <small><%= @job.email %></small></p>
+            </div><!-- col-md-8 -->
+            <div class="col-md-2">
+              <small style="color: #96a2b2;"><%= time_ago_in_words(@job.created_at) %> ago</small>
+              
+                <%= link_to 'Edit', edit_job_path(@job) %>
+                <%= link_to 'Back', jobs_path %>
+              
+            </div><!-- col-md-2 -->
+          </div><!-- row -->
+          <div class="row">
+            <div class="col-md-12">
+              <hr>
+            </div><!-- col-md-12 -->
+          </div><!-- row -->
+          <div class="row">
+            <div class="col-md-12">
+              <p><%= @job.description %></p>            
+            </div><!-- col-md-12 -->
+          </div><!-- row -->
+          <div class="row">
+            <div class="col-md-4">
+              <p><%= @job.category %></p>            
+            </div><!-- col-md-4 -->
+            <div class="col-md-4">
+              <p><%= @job.address %></p>
+            </div><!-- col-md-4 -->
+            <div class="col-md-4">
+              <p><%= @job.experience %></p>
+            </div><!-- col-md-4 -->
+          </div><!-- row -->
+          <div class="row">
+            <div class="col-md-4">
+              <p><%= @job.working_hours %></p>            
+            </div><!-- col-md-4 -->
+            <div class="col-md-4">
+              <p><%= @job.compensation %></p>
+            </div><!-- col-md-4 -->
+            <div class="col-md-4">
+              <p><%= @job.how_to_apply %></p>
+            </div><!-- col-md-4 -->
+          </div><!-- row -->
+        </div><!-- panel-body -->
+      </div><!-- panel panel-default-->
+    </div><!-- col-md-12-->
+  </div><!-- row -->
+  <div class="row">
+    <div class="col-md-12">
+      <p><%= @job.long_description %></p>
+    </div>
+  </div>
+</div><!-- container -->
 
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @job.category %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @job.address %>
-</p>
-
-<p>
-  <strong>How to apply:</strong>
-  <%= @job.how_to_apply %>
-</p>
-
-<p>
-  <strong>Company name:</strong>
-  <%= @job.company_name %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @job.website %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @job.email %>
-</p>
-
-<p>
-  <strong>Experience:</strong>
-  <%= @job.experience %>
-</p>
-
-<p>
-  <strong>Working hours:</strong>
-  <%= @job.working_hours %>
-</p>
-
-<p>
-  <strong>Compensation:</strong>
-  <%= @job.compensation %>
-</p>
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>

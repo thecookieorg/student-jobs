@@ -5,7 +5,8 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    #@jobs = Job.all
+    @jobs = current_user.jobs
   end
 
   # GET /jobs/1
@@ -71,6 +72,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:title, :description, :category, :address, :how_to_apply, :company_name, :website, :email, :experience, :working_hours, :compensation)
+      params.require(:job).permit(:title, :description, :long_description, :category, :address, :how_to_apply, :company_name, :website, :email, :experience, :working_hours, :compensation)
     end
 end
