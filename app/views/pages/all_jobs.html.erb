@@ -29,7 +29,7 @@
           <div class="panel-body">
             <div class="row">
                 <div class="col-sm-2">
-                    <img src="http://placehold.it/100x100" class="img-rounded">
+                    <%= image_tag job.company_logo.thumb.url, class: "img-rounded" %>
                 </div>
                 <div class="col-sm-3">
                     <h3><%= link_to job.title, job %></h3>

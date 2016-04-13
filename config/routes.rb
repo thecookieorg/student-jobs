@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/index'
-  get 'pages/all_jobs'
+  # get 'pages/all_jobs'
+  get 'all_jobs' => 'pages#all_jobs'
 
   resources :jobs
   devise_for :users
