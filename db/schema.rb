@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331211429) do
+ActiveRecord::Schema.define(version: 20160419221051) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20160331211429) do
     t.text     "long_description"
     t.string   "company_logo"
     t.string   "slug"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "jobs", ["slug"], name: "index_jobs_on_slug", unique: true
